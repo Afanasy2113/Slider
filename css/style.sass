@@ -1,9 +1,62 @@
-.slider__container
-    max-width: 768px;
-    position: relative;
-    margin: 0 auto
-    & img
-        
+.slider
+    &__container
+        max-width: 768px
+        position: relative
+        height: 400px
+        margin: 0 auto
+        border: 5px solid gray
+        border-radius: 5px
+        & img
+            position: absolute
+            width: 100%
+            height: 100%
+            transition: all 1s ease
+    &__control
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            display: flex
+            justify-content: space-between
+            align-items: center
+            &-item
+                border: solid #ffffff
+                border-width: 0 5px 5px 0
+                padding: 15px
+                animation-name: fadeIn
+                animation-duration: 1s
+                &.prev
+                    margin-left: 25px
+                    transform: rotate(135deg)
+                &.next
+                    margin-right: 25px
+                    transform: rotate(-45deg)
+                &:hover
+                    opacity: .7
+                    cursor: pointer
+    &__dots
+        display: flex
         width: 100%
-        height: 100%
-        
+        position: absolute
+        bottom: 0
+        justify-content: center
+        &-item
+            width: 15px
+            height: 15px
+            border-radius: 100%
+            background-color: #fff
+            margin: 20px 10px
+            animation-name: fadeIn
+            animation-duration: 1s
+            &.active
+                background-color: gray
+            &:hover
+                opacity: .7
+                cursor: pointer                  
+
+@keyframes fadeIn
+    0%
+       opacity: 0 
+    100%
+        opacity: 1
